@@ -31,6 +31,6 @@ build_script:
 #- scons platform=%GD_PLATFORM% target=%TARGET% tools=%TOOLS% debug_symbols=no verbose=yes progress=no gdnative_wrapper=yes
 
 artifacts:
-  - path: '*.*'
+  - path: '*.exe'
     name: MyBuild
   
