@@ -33,7 +33,7 @@ build_script:
 after_build:
   - mkdir Artifacts
   - dir /s
-  - xcopy /y /d "main.exe" "Artifacts\main.exe" 
+  - xcopy /y /d "main.exe" "Artifacts\" 
 
 artifacts:
   - path: Artifacts
