@@ -30,7 +30,11 @@ build_script:
 - ls
 #- scons platform=%GD_PLATFORM% target=%TARGET% tools=%TOOLS% debug_symbols=no verbose=yes progress=no gdnative_wrapper=yes
 
+after_build:
+  - mkdir Artifacts
+  - xcopy -y "%APPVEYOR_BUILD_FOLDER%\main.exe" "%APPVEYOR_BUILD_FOLDER%\Artifacts" 
+
 artifacts:
-  - path: '*.exe'
+  - path: Artifacts
     name: MyBuild
   
