@@ -1,5 +1,5 @@
 artifacts:
-  - path: ci_test
+  - path: main.exe
     name: MyBuild
   
 os: Visual Studio 2019
