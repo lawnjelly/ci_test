@@ -1,0 +1,34 @@
+artifacts:
+  - path: ci_test
+    name: MyBuild
+  
+os: Visual Studio 2019
+
+environment:
+  HOME: "%HOMEDRIVE%%HOMEPATH%"
+  SCONS_CACHE_ROOT: "%HOME%\\scons_cache"
+  SCONS_CACHE_LIMIT: 1024
+  MY_REPO_URL: "https://github.com/lawnjelly/ci_test"
+  matrix:
+    - VS: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat
+      TARGET: release_debug
+      ARCH: amd64
+
+cache:
+  - "%SCONS_CACHE_ROOT%"
+
+install:
+  - if defined VS call "%VS%" %ARCH%  # if defined - so we can also use mingw
+
+before_build:
+  # Get Godot source and install the module
+  - cd %APPVEYOR_BUILD_FOLDER%\..
+  - git clone --depth=1 %MY_REPO_URL% && cd ci_test
+  #- mklink /d modules\lportal %APPVEYOR_BUILD_FOLDER%
+
+  - cl.exe
+  - SET "SCONS_CACHE=%SCONS_CACHE_ROOT%\3.2"
+
+build_script:
+- cl.exe main.cpp
+#- scons platform=%GD_PLATFORM% target=%TARGET% tools=%TOOLS% debug_symbols=no verbose=yes progress=no gdnative_wrapper=yes
