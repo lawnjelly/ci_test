@@ -32,7 +32,7 @@ build_script:
 
 after_build:
   - mkdir Artifacts
-  - xcopy -y "%APPVEYOR_BUILD_FOLDER%\main.exe" "%APPVEYOR_BUILD_FOLDER%\Artifacts" 
+  - xcopy /y /d "%APPVEYOR_BUILD_FOLDER%\main.exe" "%APPVEYOR_BUILD_FOLDER%\Artifacts" 
 
 artifacts:
   - path: Artifacts
