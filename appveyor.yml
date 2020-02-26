@@ -32,8 +32,9 @@ after_build:
   - mkdir Artifacts
   - xcopy /y /d "main.exe" "Artifacts\" 
   - dir /s
+  - 7z a myapp.zip main.exe
 
 artifacts:
-  - path: '*.exe'
+  - path: '*.zip'
     name: MyBuild
   
