@@ -31,10 +31,10 @@ build_script:
 after_build:
   - mkdir Artifacts
   - xcopy /y /d "main.exe" "Artifacts\" 
-  - dir /s
   - 7z a myapp.zip main.exe
+  - dir /s
 
 artifacts:
-  - path: '*.zip'
+  - path: myapp.zip
     name: MyBuild
   
