@@ -21,7 +21,7 @@ before_build:
   - git clone --depth=1 %MY_REPO_URL% && cd ci_test
   #- mklink /d modules\lportal %APPVEYOR_BUILD_FOLDER%
 
-  - C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat
+  - VS: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat
   - cl.exe
   #- SET "SCONS_CACHE=%SCONS_CACHE_ROOT%\3.2"
 
