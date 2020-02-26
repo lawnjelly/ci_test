@@ -26,6 +26,6 @@ after_build:
   - dir /s
 
 artifacts:
-  - path: C:\projects\ci_test\main.exe
+  - path: '*.*'
     name: MyBuild
   
