@@ -35,6 +35,6 @@ after_build:
   - dir /s
 
 artifacts:
-  - path: *.exe
+  - path: '*.exe'
     name: MyBuild
   
