@@ -23,7 +23,7 @@ after_build:
   #- mkdir Artifacts
   #- xcopy /y /d "main.exe" "Artifacts\" 
   #- 7z a myapp.zip main.exe
-  - dir /s
+  #- dir /s
 
 artifacts:
   - path: '*.*'
