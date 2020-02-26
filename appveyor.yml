@@ -2,19 +2,18 @@ os: Visual Studio 2019
 
 environment:
   HOME: "%HOMEDRIVE%%HOMEPATH%"
-  SCONS_CACHE_ROOT: "%HOME%\\scons_cache"
-  SCONS_CACHE_LIMIT: 1024
   MY_REPO_URL: "https://github.com/lawnjelly/ci_test"
-  matrix:
-    - VS: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat
-      TARGET: release_debug
-      ARCH: amd64
+  - VS: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat
+  #matrix:
+    #- VS: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat
+      #TARGET: release_debug
+      #ARCH: amd64
 
-cache:
-  - "%SCONS_CACHE_ROOT%"
+#cache:
+#  - "%SCONS_CACHE_ROOT%"
 
 install:
-  - if defined VS call "%VS%" %ARCH%  # if defined - so we can also use mingw
+#  - if defined VS call "%VS%" %ARCH%  # if defined - so we can also use mingw
 
 before_build:
   # Get Godot source and install the module
@@ -23,7 +22,7 @@ before_build:
   #- mklink /d modules\lportal %APPVEYOR_BUILD_FOLDER%
 
   - cl.exe
-  - SET "SCONS_CACHE=%SCONS_CACHE_ROOT%\3.2"
+  #- SET "SCONS_CACHE=%SCONS_CACHE_ROOT%\3.2"
 
 build_script:
 - cl.exe main.cpp
@@ -36,6 +35,6 @@ after_build:
   - dir /s
 
 artifacts:
-  - path: Artifacts\*
+  - path: *.exe
     name: MyBuild
   
