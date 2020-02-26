@@ -11,8 +11,8 @@ install:
   - if defined VS call "%VS%" %ARCH%  # if defined - so we can also use mingw
 
 before_build:
-  - cd %APPVEYOR_BUILD_FOLDER%\..
-  - git clone --depth=1 %MY_REPO_URL% && cd ci_test
+  #- cd %APPVEYOR_BUILD_FOLDER%\..
+  #- git clone --depth=1 %MY_REPO_URL% && cd ci_test
   - cl.exe
 
 build_script:
@@ -26,6 +26,6 @@ after_build:
   #- dir /s
 
 artifacts:
-  - path: 'ci_test\*.*'
+  - path: '*.*'
     name: MyBuild
   
