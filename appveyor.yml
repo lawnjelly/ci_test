@@ -3,7 +3,7 @@ os: Visual Studio 2019
 environment:
   HOME: "%HOMEDRIVE%%HOMEPATH%"
   MY_REPO_URL: "https://github.com/lawnjelly/ci_test"
-  VS: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat
+  #VS: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat
   #matrix:
     #- VS: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat
       #TARGET: release_debug
