@@ -20,12 +20,12 @@ build_script:
 - ls
 
 after_build:
-  - mkdir Artifacts
-  - xcopy /y /d "main.exe" "Artifacts\" 
-  - 7z a myapp.zip main.exe
+  #- mkdir Artifacts
+  #- xcopy /y /d "main.exe" "Artifacts\" 
+  #- 7z a myapp.zip main.exe
   - dir /s
 
 artifacts:
-  - path: myapp.zip
+  - path: main.exe
     name: MyBuild
   
