@@ -26,6 +26,6 @@ after_build:
   #- dir /s
 
 artifacts:
-  - path: '*.*'
+  - path: 'ci_test\*.*'
     name: MyBuild
   
