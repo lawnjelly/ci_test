@@ -4,10 +4,10 @@ environment:
   HOME: "%HOMEDRIVE%%HOMEPATH%"
   MY_REPO_URL: "https://github.com/lawnjelly/ci_test"
   #VS: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat
-  #matrix:
-    #- VS: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat
-      #TARGET: release_debug
-      #ARCH: amd64
+  matrix:
+    - VS: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat
+      TARGET: release_debug
+      ARCH: amd64
 
 #cache:
 #  - "%SCONS_CACHE_ROOT%"
@@ -20,8 +20,6 @@ before_build:
   - cd %APPVEYOR_BUILD_FOLDER%\..
   - git clone --depth=1 %MY_REPO_URL% && cd ci_test
   #- mklink /d modules\lportal %APPVEYOR_BUILD_FOLDER%
-
-  - call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat"
   - cl.exe
   #- SET "SCONS_CACHE=%SCONS_CACHE_ROOT%\3.2"
 
