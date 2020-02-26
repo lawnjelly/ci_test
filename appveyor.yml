@@ -26,6 +26,6 @@ after_build:
   - dir /s
 
 artifacts:
-  - path: "%HOME%\myapp.zip"
+  - path: %HOME%\myapp.zip
     name: MyBuild
   
